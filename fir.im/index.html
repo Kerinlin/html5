@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fir.im中国no1 app测试分发</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <!-- 类名套路 
+    wrapper 包装
+    containner 容器
+    .wrapper>container>.box
+    h5结构
+        着力?
+        1.整体上下动 整体wrapper
+        2.分开运动
+            螺旋桨rotate
+            container
+        img定位
+        元素类名关乎结构,业务,状态
+    -->
+    <div class="section section-1 ready ">
+        <div class="plane-wrapper">
+            <img src="http://fir.im/images/plane.svg" alt="" class="plane">
+            <div class="rotate-container">
+                <img src="http://fir.im/images/propeller.svg" alt="" class="propeller">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.addEventListener('mousewheel', function () {
+        document.querySelector('.section-1').classList.add('animation-out');
+    }, false)
+
+
+</script>
+
+</html>
