@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东到家</title>
+    <!-- base.css reset 基础样式 -->
+    <!-- loading 为了加载资源 -->
+    <!-- main.css 主页务  -->
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./loading.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 加载等待显示-->
+    <!-- 1. 整体结构: loading盒子下 存放一个inner盒子 用于设置加载时的线条,inner盒子下设置两个i标签用于设置内部两根线条
+        2.通过绝对定位让inner盒子向下(top),向右偏移(left)偏移一半,再通过设置外边距为内容宽高的一半,使整个儿inner盒子居于页面正中间
+        3.通过设置圆角(50%),再设置其边框一边的颜色,然后隐藏(设置border颜色为transparent)其余3边,显示出圆弧;
+        4.因为i标签为行内元素,所以得转换成block,这样才能设置宽高,内部两根线可以通过定位(设置4边为相同值可以让线与线之间的距离保持一致)来确定自己位置
+        5.设置animation属性,让线条转起来   
+    -->
+    <div id="o2_loading" class="loading">
+        <div class="inner">
+            <i class="before"></i>
+            <i class="after"></i>
+        </div>
+        <div class="text">loading</div>
+    </div>
+
+    <div id="o2_main" class="main hide">
+        <div class="page_wrap __s">
+            <div class="page p8" id="page">
+                <div class="page_scene">
+                    <div class="page_key"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/preloader.js/src/preloader.js"></script>
+    <script>
+        $(function () {
+            //预加载器
+            const preloader = new Preloader({
+                resources: [
+                    'img/p8.png',
+                ],
+                concurrency: 4,   //设置并发数
+                perMinTime: 1000  //单个资源的最小加载时间
+            })
+
+            preloader.addCompletionListener(function () {
+                $('#o2_loading').remove();
+                $('#o2_main').removeClass('hide');
+                init();
+            });//所有资源加载完成后执行
+
+            preloader.start()
+
+            function init() {
+                console.log('init ok');
+            }
+        })
+    </script>
+</body>
+
+</html>
