@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100%;
+    }
+    .aside{
+        float: left;
+        width: 100px;
+        height: 150px;
+        background-color: #ff6666;
+    }
+    .main{
+        height: 150px;
+        background-color: #ffcccc;
+        overflow: hidden;
+    }
+    /* .wrap{
+        width: 500px;
+        margin-left: 300px;
+    } */
+    </style>
+</head>
+<body>
+    <!-- aside main 在同一BFC上  -->
+    <!-- BFC布局规则：
+        1.每个元素的左边，要与包含box的左边相接触
+        2.BFC区域不会与float box重叠
+     -->
+    <!-- <div class="wrap"> -->
+    <div class="aside"></div>
+    <div class="main"></div>
+    <!-- </div> -->
+</body>
+</html>

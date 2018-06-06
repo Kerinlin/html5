@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        position: relative;
+    }
+    .form {
+        margin: 0 auto;
+        position: relative;
+        width: 600px;
+        height:100px;
+        background: #f0f3ef;
+    }
+
+    .search {
+        position: relative;
+        /* display: inline-block; */
+        width: 500px;
+        height: 60px;
+    }
+
+    .text {
+        position: absolute;
+        left: 0;
+        top:25px;
+        padding: 4px 44px 4px 4px;
+        width: 450px;
+        height: 25px;
+        border: 1px solid transparent;
+        line-height: 25px;
+        font-size: 14px;
+        color: #989898;
+    }
+
+    .photo-search-btn {
+        position: absolute;
+        right: 12px;
+        top: 30px;
+        width: 19px;
+        height: 15px;
+        /* overflow: hidden; */
+    }
+
+    .lg {
+        font-size: 20px;
+    }
+    .form .button {
+        position: absolute;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        right: 50px;
+        top: 25px;
+        width: 50px;
+        height: 35px;
+        line-height: 35px;
+        border: none;
+        background-color: #f10215;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+    }
+    .photo-search-btn:hover{
+        color: red;
+    }
+</style>
+
+
+
+<body>
+    <div class="form">
+        <div class="search">
+            <input type="text" class="text" placeholder="雅马哈电钢琴">
+            <span class="photo-search-btn">
+                <i class="iconfont icon-shumajiadian lg"></i>
+            </span>
+            </div>
+        <button class="button">
+            <i class="iconfont icon-iconsearch-copy"></i>
+        </button>
+    </div>
+</body>
+
+</html>

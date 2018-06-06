@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .par{
+            border: 5px solid #ffcccc;
+            width: 300px;
+            overflow: hidden;
+        }
+        .child{
+            border:5px solid #f66;
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="par">
+        <!-- 规则：BFC高度，浮动元素参与计算 -->
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</html>
